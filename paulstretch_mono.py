@@ -109,9 +109,13 @@ def paulstretch(samplerate,smp,stretch,windowsize_seconds,outfilename):
     outfile.close()
 ########################################
 
-(samplerate,smp)=load_wav("input.wav")
+args = sys.argv[1:]
 
-paulstretch(samplerate,smp,8.0,0.25,"out.wav")
-
-
-
+if len(args) > 0:
+    for fn in args:
+        outfilename = fn[:-4] + "-stretch.wav"
+        (samplerate,smp)=load_wav(fn)
+        paulstretch(samplerate,smp,8,0.25,outfilename)
+else:
+    (samplerate,smp)=load_wav("in.wav")
+    paulstretch(samplerate,smp,8,0.25,"out.wav")
