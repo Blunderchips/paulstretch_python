@@ -1,3 +1,33 @@
+The new in this version of Paulstretch is support for FLAC input/output files and other formats.
+
+To get Paulstretch working in Python you need to install:
+
+PySoundFile
+http://pysoundfile.readthedocs.io/en/0.9.0/#installation
+
+Install dependencies using pip:
+pip install cffi
+pip install numpy
+
+Install PySoundFile using pip:
+pip install pysoundfile
+
+On linux you also need to install pip install libsndfile:
+sudo apt-get install libsndfile1
+
+To use file support run file using python3:
+
+paulstretch_stereo_for_flac.py
+
+Example:
+python3 paulstretch_stereo_for_flac.py -s 2.0 -w 0.25 input.flac output.flac
+
+List all supported formats:
+python3 paulstretch_stereo_for_flac.py -l
+
+-------------
+
+The Readme from the Original version of Paulstretch:
 This is Paulstretch , Python version
 by Nasca Octavian PAUL, Targu Mures, Romania
 http://www.paulnasca.com/
